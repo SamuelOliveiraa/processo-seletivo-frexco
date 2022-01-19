@@ -1,0 +1,51 @@
+/* linha de navegacao */
+.icon {
+  display: block;
+  background-color: transparent;
+  width: 30px;
+  height: 15px;
+  position: relative;
+  cursor: pointer;
+  z-index: 100;
+}
+.icon .line {
+  display: block;
+  background-color: var(--color-black);
+  width: 100%;
+  height: 3px;
+  border-radius: 1rem;
+  transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+  position: absolute;
+}
+.icon .line1 {
+  top: 0;
+}
+.icon .line2 {
+  top: 52%;
+}
+.icon .line3 {
+  top: 100%;
+}
+.icon.close .line1 {
+  background-color: var(--color-black);
+  z-index: 20;
+  transform: rotate(45deg);
+  top: 48%;
+}
+.icon.close .line2 {
+  opacity: 0;
+  visibility: hidden;
+}
+.icon.close .line3 {
+  background-color: var(--color-black);
+  z-index: 20;
+  transform: rotate(132deg);
+  top: 48%;
+}
+@media screen and (min-width: 600px) {
+  .icon {
+    opacity: 0;
+    visibility: hidden;
+    left: -200%;
+  }
+}

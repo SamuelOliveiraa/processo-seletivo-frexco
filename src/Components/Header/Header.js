@@ -63,7 +63,7 @@ function Header({ cart, setCart }) {
   return (
     <header className={`${style.header} + ${"flex_between"}`}>
       <div className={`${style.container} + ${"flex_between"}`}>
-        <IconHeader estado={nav} setEstado={setNav}></IconHeader>
+        <IconHeader nav={nav} setNav={setNav}></IconHeader>
 
         <h2>
           <Link to="/">HortFrut</Link>
@@ -75,7 +75,7 @@ function Header({ cart, setCart }) {
           <ul>
             <li>
               <Link to="/" onClick={change} className={style.active}>
-                Colections
+                Home
               </Link>
             </li>
             <li>
@@ -112,7 +112,7 @@ function Header({ cart, setCart }) {
         <Images src="avatar"></Images>
 
         <ModalCart
-          carrinho={cartState}
+          cartState={cartState}
           cart={cart}
           setCart={setCart}
         ></ModalCart>

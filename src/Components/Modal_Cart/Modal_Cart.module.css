@@ -1,0 +1,103 @@
+.modal_cart {
+  background-color: var(--color-white);
+  width: 30rem;
+  min-height: 12rem;
+  max-height: 29rem;
+  overflow-y: auto;
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 1.6rem;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.168);
+  position: absolute;
+  top: 113%;
+  left: -340%;
+  z-index: 70;
+}
+.modal_cart::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.modal_cart .cart_container,
+.modal_cart .cart_container .empty,
+.modal_cart .cart_container .full {
+  width: 100%;
+  margin-top: 2rem;
+}
+.modal_cart .cart_container .empty {
+  font-size: 1.4rem;
+  color: var(--dark-grayish-blue);
+  min-height: 13rem;
+}
+.modal_cart .cart_container .full {
+  margin-bottom: 2rem;
+}
+.modal_cart .cart_container .full.inactive,
+.modal_cart .cart_container .empty.inactive,
+.modal_cart.inactive {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: -100rem;
+}
+.modal_cart .cart_container .full .full_container {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 0.3fr;
+  padding-top: 1.4rem;
+  align-items: center;
+}
+.modal_cart .cart_container .full + .full {
+  margin-top: 1rem;
+}
+.modal_cart .cart_container .full img {
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+}
+.modal_cart .cart_container .full img:hover {
+  outline: none;
+}
+.modal_cart .cart_container .full p {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 1.3rem;
+  margin-left: 0.7rem;
+  color: var(--dark-grayish-blue);
+  font-weight: 400;
+}
+.modal_cart .cart_container .full p strong {
+  margin-left: 0.4rem;
+  color: var(--color-black);
+}
+.modal_cart .cart_container .full .full_container svg {
+  font-size: 2rem;
+  color: var(--dark-grayish-blue);
+  position: relative;
+  z-index: 5;
+}
+.modal_cart .cart_container .full .full_container svg:hover {
+  color: red;
+}
+.modal_cart .cart_container .full .full_container .icon_container {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  text-align: center;
+}
+.modal_cart .cart_container .full .full_container + .full_container {
+  margin-bottom: 1.8rem;
+}
+
+@media screen and (min-width: 600px) {
+  .modal_cart {
+    top: 4rem;
+    left: -24rem;
+    transform: translateX(0);
+  }
+}
