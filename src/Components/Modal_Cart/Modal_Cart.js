@@ -18,10 +18,10 @@ function Modal_Cart({ cartState, cart, setCart }) {
   }
 
   let currentCart = JSON.parse(localStorage.getItem("cart"));
-  useEffect(() => {
+  /* useEffect(() => {
     setCart(currentCart);
   }, [currentCart]);
-
+ */
   function deleteItem(e) {
     cart.map((item, index) => {
       if (

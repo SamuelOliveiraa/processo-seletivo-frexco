@@ -2,7 +2,6 @@ import style from "./Header.module.css";
 import "../../index.css";
 import { Link } from "react-router-dom";
 
-import Images from "../Imagens/Imagens";
 import { BiCartAlt } from "react-icons/bi";
 import IconHeader from "../Icon_Header/Icon_Header";
 import ModalCart from "../Modal_Cart/Modal_Cart";
@@ -108,8 +107,6 @@ function Header({ cart, setCart }) {
         <div className={style.cart_quantity}>
           {cartLength === null ? 0 : cartLength.length}
         </div>
-
-        <Images src="avatar"></Images>
 
         <ModalCart
           cartState={cartState}
