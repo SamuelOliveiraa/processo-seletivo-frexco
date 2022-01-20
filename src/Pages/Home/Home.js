@@ -10,7 +10,6 @@ function Home() {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      mode: "no-cors",
     })
       .then((response) => console.log(response.json()))
       .catch((error) => console.log(error));
