@@ -15,28 +15,28 @@ function Footer() {
           <li>Formas de Pagamento</li>
           <ul>
             <li>
-              <img src="http://localhost:3002/files/visa-card.png" alt="" />
+              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/visa-card.png" alt="" />
             </li>
             <li>
-              <img src="http://localhost:3002/files/mastercard.png" alt="" />
+              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/mastercard.png" alt="" />
             </li>
             <li>
-              <img src="http://localhost:3002/files/elo-card.png" alt="" />
+              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/elo-card.png" alt="" />
             </li>
             <li>
               <img
-                src="http://localhost:3002/files/amricanas-card.png"
+                src="https://api-processo-seletivo-frexco.herokuapp.com/files/amricanas-card.png"
                 alt=""
               />
             </li>
             <li>
-              <img src="http://localhost:3002/files/diners-card.png" alt="" />
+              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/diners-card.png" alt="" />
             </li>
             <li>
-              <img src="http://localhost:3002/files/discover-card.png" alt="" />
+              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/discover-card.png" alt="" />
             </li>
             <li>
-              <img src="http://localhost:3002/files/jcb-card.png" alt="" />
+              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/jcb-card.png" alt="" />
             </li>
           </ul>
         </ul>

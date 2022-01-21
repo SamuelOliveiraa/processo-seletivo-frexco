@@ -8,7 +8,7 @@ import BannerHome from "../../Components/BannerHome/BannerHome";
 function Home({ cart, setCart }) {
   return (
     <div>
-      <BannerHome img={"http://localhost:3002/files/banner.png"} />
+      <BannerHome img={"https://api-processo-seletivo-frexco.herokuapp.com/files/banner.png"} />
 
       <InfoCards />
 
