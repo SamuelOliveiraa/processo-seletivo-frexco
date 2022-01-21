@@ -1,0 +1,220 @@
+.container .img_container {
+  width: 100%;
+  height: 320px;
+}
+.container .img_content {
+  display: none;
+}
+.container > .img_container > div {
+  height: 100%;
+}
+.container > .img_container > img {
+  margin-top: -2rem;
+  width: 100%;
+} 
+.container .text {
+  max-width: 563px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 0 1.2rem;
+  padding-bottom: 5rem;
+}
+.container .text span:first-child {
+  color: var(--color-orange);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.container .text h2 {
+  font-size: 2.3rem;
+  margin: 0.6rem 0;
+}
+.container .text p:first-of-type {
+  color: var(--dark-grayish-blue);
+  font-size: 1.3rem;
+  line-height: 2rem;
+
+}
+.container .text p:last-of-type {
+  margin: 1.3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .text p strong {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.container .text p .discount {
+  background: var(--pale-orange);
+  color: var(--color-orange);
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 13%;
+  font-size: 1.4rem;
+  font-weight: 600;
+  justify-self: flex-start;
+}
+.container .text p .old {
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
+  font-size: 1.3rem;
+}
+.btn {
+  max-width: 268px;
+  height: 50px;
+  background-color: var(--color-black);
+  border-radius: 1rem;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.btn:hover {
+  background-color: var(--color-orange);
+}
+.btn .btn_text {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.btn .icon {
+  height: 2rem;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+.container .btn {
+  max-width: 330px;
+  margin: 0 auto;
+}
+.new_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: flex-start;
+}
+table{
+  margin-top: 1.5rem;
+  border: 1px solid;
+  position: relative;
+}
+table::after{
+  content: '';
+  width: 174px;
+  height: 1px;
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  background: var(--color-black);
+  transform: rotate(90deg);
+}
+table, tr{
+  width: 100%;
+  font-size: 1.3rem;
+}
+table tr{
+  padding: 0.6rem;
+}
+table tr + tr{
+  border-top: 1px solid;
+}
+
+@media screen and (min-width: 520px) {
+  .container .swiper_container {
+    display: none;
+  }
+  .container .img_content {
+    max-width: 550px;
+    margin: 0 auto;
+    height: 480px;
+    display: grid;
+    grid-auto-rows: 443px;
+    grid-template-areas: "others principal" ;
+    grid-template-columns: 140px 1fr;
+    justify-content: start;
+  }
+  .container .img_content .principal,
+  .container .img_content > .principal > img {
+    width: 100%;
+    height: 100%;
+  }
+  .container .img_content .principal {
+    max-width: 500px;
+    grid-area: principal;
+    margin: 0 auto;
+  }
+  .container .img_content .others {
+    max-width: 500px;
+    grid-area: others;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 1rem;
+  }
+  .container .img_content .others .other{
+    height: 104px;
+  }
+  .container .img_content .others > .other > img {
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+  }
+  .container .img_content .others .other {
+    width: 100px;
+  }
+  .container .img_content .others .other.active {
+    border: 2px solid var(--color-black);
+    border-radius: 8px;
+    position: relative;
+  }
+  .container .text {
+    margin-top: 0;
+  }
+  .container .text .buttons {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+  .container .text .quantity,
+  .container .btn {
+    width: 100%;
+  }
+  .container .btn {
+    margin: 0;
+    margin-left: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .container {
+    display: grid;
+    grid-template-areas: "content text";
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 5rem 0;
+  }
+  .container .img_content {
+    height: 500px;
+    grid-auto-rows: 350px;
+    grid-area: content;
+    grid-template-areas: "principal" "others";
+    grid-template-columns: 1fr;
+  }
+  .container .img_content .principal,
+  .container .img_content > .principal > img {
+    border-radius: 8px;
+  }
+  .container .text {
+    grid-area: text;
+    max-width: 350px;
+    padding-bottom: 0;
+  }
+  .container .img_content .others {
+    max-width: 500px;
+    height: 110px;
+    flex-direction: row;
+    margin: 2rem auto;
+    gap: 1.5rem;
+  }
+  .container .img_content .others {
+    gap: 1.5rem;
+  }
+}

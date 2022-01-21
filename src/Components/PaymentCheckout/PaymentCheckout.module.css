@@ -1,0 +1,105 @@
+.payment input,
+.payment input::placeholder{
+    width: 100%;
+    background-color: transparent;
+    color: var(--color-white);
+    height: 20px;
+}
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;   
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+.payment{
+    width: 300px;
+    padding: 1.5rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.payment form a{
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+.payment form a:hover{
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+}
+.payment h2{
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
+    font-weight: 900;
+}
+.payment .button_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+.payment .button_container .button_checkout{
+    max-width: 135px;
+    height: 40px;
+    border-radius: 2rem;
+    background-color: transparent;
+    border: 1px solid var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: .2s ease-in-out;
+}
+.payment .button_container .button_checkout:hover{
+    background-color: var(--color-white);
+    color: var(--color-black);
+    cursor: pointer;
+}
+.payment .button_container .button_checkout svg{
+    margin-right: 0.7rem;
+    font-size: 1.6rem;
+}
+.payment p{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.payment .infos,
+.payment .infos .date_info .select_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.payment .infos .date_info select,
+.payment .infos .date_info option,
+.payment .infos .cvv input{
+    background-color: transparent;
+    color: var(--color-white);
+    border: 0;
+    outline: none;
+    border-bottom: 0.1px solid rgba(255, 255, 255, 0.158);
+    height: 30px;
+}
+.payment .infos .date_info option{
+    color: var(--color-black);
+}
+.payment .infos .date_info{
+   width: 150px;
+}
+.payment .infos .cvv{
+    width: 60px;
+}
+
+.payment .method,
+.payment .name,
+.payment .card_number,
+.payment .infos{
+    margin: 2rem 0; 
+    border-bottom: 0.1px solid rgba(255, 255, 255, 0.158);
+    padding-bottom: 0.8rem;
+}
+.payment .infos{
+    border-bottom: 0;
+}

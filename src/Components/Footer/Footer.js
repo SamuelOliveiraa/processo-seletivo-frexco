@@ -10,7 +10,38 @@ import {
 function Footer() {
   return (
     <footer>
-      <div className={style.header}>
+      <div className={style.list}>
+        <ul>
+          <li>Formas de Pagamento</li>
+          <ul>
+            <li>
+              <img src="http://localhost:3002/files/visa-card.png" alt="" />
+            </li>
+            <li>
+              <img src="http://localhost:3002/files/mastercard.png" alt="" />
+            </li>
+            <li>
+              <img src="http://localhost:3002/files/elo-card.png" alt="" />
+            </li>
+            <li>
+              <img
+                src="http://localhost:3002/files/amricanas-card.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img src="http://localhost:3002/files/diners-card.png" alt="" />
+            </li>
+            <li>
+              <img src="http://localhost:3002/files/discover-card.png" alt="" />
+            </li>
+            <li>
+              <img src="http://localhost:3002/files/jcb-card.png" alt="" />
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div className={`${style.header} flex_between`}>
         <h1>HortFrut</h1>
 
         <div className={style.icons}>
@@ -36,43 +67,6 @@ function Footer() {
             <FaInstagram />
           </a>
         </div>
-      </div>
-
-      <div className={style.list}>
-        <ul>
-          <li>Pages</li>
-          <li>Men</li>
-          <li>Women</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-        <ul>
-          <li>Colections Men</li>
-          <li>NMD</li>
-          <li>Air Force</li>
-          <li>Everlast Haze</li>
-          <li>Air Max</li>
-          <li>Modare Knit</li>
-          <li>Air Jordan</li>
-          <li>Nike SB</li>
-        </ul>
-        <ul>
-          <li>Colections Women</li>
-          <li>NMD</li>
-          <li>Air Force</li>
-          <li>Everlast Haze</li>
-          <li>Air Max</li>
-          <li>Modare Knit</li>
-          <li>Air Jordan</li>
-          <li>Nike SB</li>
-        </ul>
-        <ul>
-          <li>Contact</li>
-          <li>(+55)1182927182</li>
-          <li>example23@gmail.com</li>
-          <li>support@hotmail.com</li>
-          <li> 4383 Longview Avenue Queens, NY</li>
-        </ul>
       </div>
     </footer>
   );

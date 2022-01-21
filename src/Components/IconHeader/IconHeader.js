@@ -1,4 +1,4 @@
-import style from './Icon_Header.module.css'
+import style from './IconHeader.module.css'
 
 function Icon_Header({nav, setNav}) {
     function click() {

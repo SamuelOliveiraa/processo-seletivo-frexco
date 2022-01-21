@@ -94,7 +94,7 @@
 }
 .header .icons .cart_quantity {
   position: absolute;
-  background-color: var(--color-green);
+  background-color: var(--color-red);
   border-radius: 50%;
   width: 18px;
   height: 15px;
@@ -129,7 +129,7 @@
     transform: translateX(50%);
   }
   .header .nav .nav_container ul {
-    width: 30rem;
+    width: 24rem;
     height: 3rem;
     flex-direction: row;
     font-weight: 400;

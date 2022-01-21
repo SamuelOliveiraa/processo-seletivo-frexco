@@ -1,25 +1,31 @@
-import { useEffect } from "react";
-import CardShoes from "../../Components/Card_Shoes/Card_Shoes";
-import api from "../../Config/api";
+import { Link } from "react-router-dom";
+import style from "./Home.module.css";
 
-function Home() {
-   function click() {
-    fetch(" https://www.fruityvice.com/api/fruit/all", {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
-  }
+import CardsContainer from "../../Components/CardsContainer/CardsContainer";
+import InfoCards from "../../Components/InfoCards/InfoCards";
+import BannerHome from "../../Components/BannerHome/BannerHome";
+
+function Home({ cart, setCart }) {
   return (
-    <>
-      <CardShoes />
-      <button onClick={click}>Clique aqui para dar um bug</button>
-    </>
+    <div>
+      <BannerHome img={"http://localhost:3002/files/banner.png"} />
+
+      <InfoCards />
+
+      <Link to="/search" className={`${style.text_container} flex_between`}>
+        <h2>Ofertas da Semana</h2>
+
+        <p>Confira aqui as melhoras ofertas</p>
+      </Link>
+
+      <CardsContainer
+        url={"/all"}
+        cart={cart}
+        setCart={setCart}
+        limit={9}
+      />
+
+    </div>
   );
 }
 

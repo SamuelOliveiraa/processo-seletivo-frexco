@@ -3,14 +3,13 @@
   width: 30rem;
   min-height: 12rem;
   max-height: 29rem;
-  overflow-y: auto;
   font-size: 1rem;
   border-radius: 10px;
   padding: 1.6rem;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.168);
   position: absolute;
   top: 113%;
-  left: -340%;
+  left: -520%;
   z-index: 70;
 }
 .modal_cart::before {
@@ -22,19 +21,20 @@
   height: 0.1px;
   background-color: rgba(0, 0, 0, 0.1);
 }
+.modal_cart .cart_container{
+  overflow-y: scroll;
+  max-height: 158px;
+}
 .modal_cart .cart_container,
 .modal_cart .cart_container .empty,
 .modal_cart .cart_container .full {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 .modal_cart .cart_container .empty {
   font-size: 1.4rem;
   color: var(--dark-grayish-blue);
   min-height: 13rem;
-}
-.modal_cart .cart_container .full {
-  margin-bottom: 2rem;
 }
 .modal_cart .cart_container .full.inactive,
 .modal_cart .cart_container .empty.inactive,
@@ -97,7 +97,7 @@
 @media screen and (min-width: 600px) {
   .modal_cart {
     top: 4rem;
-    left: -24rem;
+    left: -26rem;
     transform: translateX(0);
   }
 }

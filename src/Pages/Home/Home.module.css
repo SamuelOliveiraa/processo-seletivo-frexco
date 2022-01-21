@@ -1,0 +1,13 @@
+.text_container {
+  width: 240px;
+  height: 55px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.text_container h2 {
+  font-size: 2.5rem;
+  color: var(--color-red);
+}
+.text_container p {
+  font-size: 1.4rem;
+}

@@ -1,0 +1,52 @@
+/* SWIPER */
+.swiper {
+  position: relative;
+}
+.swiper .wrapper {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  margin-top: 1.7rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+.swiper .wrapper .img_container {
+  object-fit: cover;
+  flex: none;
+  scroll-snap-align: center;
+  width: 100%;
+  height: 100%;
+}
+.swiper .wrapper .img_container > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* SCROLLBAR WIDTH */
+.swiper .wrapper::-webkit-scrollbar {
+  width: 20px;
+  height: 4px;
+}
+.swiper .wrapper::-webkit-scrollbar {
+  width: 20px;
+  height: 4px;
+}
+
+/* SCROLLBAR HANDLE */
+.swiper .wrapper::-webkit-scrollbar-thumb {
+  background: var(--dark-grayish-blue);
+  border-radius: 10px;
+}
+/* SCROLLBAR HANDLE ON HOVER */
+.swiper .wrapper::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+@media screen and (min-width: 380px) {
+  .swiper .wrapper {
+    height: 350px;
+  }
+}

@@ -1,0 +1,26 @@
+.search{
+    margin-top: 2rem;
+}
+.search > h2{
+    margin: 2rem 0;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2.3rem;
+}
+.search .search_container{
+    width: 100%;
+    background: var(--color-white);
+    position: relative;
+}
+.search .search_container > input{
+    width: 85%;
+    margin-left: 2.7rem;
+    padding: 1rem;
+}
+.search .search_container > svg{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 18%;
+    left: 1%;
+}

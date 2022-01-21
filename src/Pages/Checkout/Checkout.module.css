@@ -1,0 +1,15 @@
+.checkout_container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    margin: 5rem 0;
+    gap: 1rem;
+}  
+
+
+@media screen and (min-width: 750px) {
+    .checkout_container{
+        grid-template-columns: 2fr 1fr;
+        padding: 0 1rem;
+    }
+}

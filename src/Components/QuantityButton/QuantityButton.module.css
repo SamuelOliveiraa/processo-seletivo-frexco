@@ -1,0 +1,40 @@
+.quantity {
+    width: 100%;
+    max-width: 330px;
+    height: 50px;
+    background: hsla(220, 14%, 75%, 0.2);
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem auto;
+    transition: 0.2s ease-in-out;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.quantity .number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantity .minus,
+.quantity .plus {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    height: 100%;
+    color: var(--color-orange);
+    padding: 0 1rem;
+    font-size: 2rem;
+}
+.quantity .minus {
+    border-radius: 1rem 0 0 1rem;
+}
+.quantity .plus {
+    border-radius: 0 1rem 1rem 0;
+}
+.quantity .minus:hover,
+.quantity .plus:hover {
+    background-color: hsla(220, 14%, 75%, 0.2);
+}

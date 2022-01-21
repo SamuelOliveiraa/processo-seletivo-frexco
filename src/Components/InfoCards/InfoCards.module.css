@@ -1,0 +1,33 @@
+.cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+  justify-content: center;
+  gap: 4rem;
+  margin: 8rem auto;
+}
+.cards .card {
+  height: 100px;
+  display: grid;
+}
+.cards .card:hover {
+  color: var(--color-orange);
+  cursor: pointer;
+}
+.cards .card .icon_container,
+.cards .card .text {
+  text-align: center;
+}
+.cards .card .icon_container svg {
+  width: 40px;
+  font-size: 40px;
+  transition: 0.2s ease-in-out;
+}
+.cards .card .text h2,
+.cards .card .text p {
+  transition: 0.2s ease-in-out;
+}
+.cards .card .text p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}

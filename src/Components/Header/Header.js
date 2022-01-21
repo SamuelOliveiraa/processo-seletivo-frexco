@@ -3,14 +3,30 @@ import "../../index.css";
 import { Link } from "react-router-dom";
 
 import { BiCartAlt } from "react-icons/bi";
-import IconHeader from "../Icon_Header/Icon_Header";
-import ModalCart from "../Modal_Cart/Modal_Cart";
+import IconHeader from "../IconHeader/IconHeader";
+import ModalCart from "../ModalCart/ModalCart";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 
 function Header({ cart, setCart }) {
   const [nav, setNav] = useState(null);
   const [cartState, setCartState] = useState("");
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const list = document.querySelector(".list").children;
+
+    for (let item of list) {
+      item.children[0].classList.remove(`${style.active}`);
+    }
+
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].children[0].attributes["href"].nodeValue === pathname) {
+        list[i].children[0].classList.add(`${style.active}`);
+      }
+    }
+  }, [pathname]);
 
   function toggle() {
     if (nav === "") {
@@ -27,28 +43,16 @@ function Header({ cart, setCart }) {
       setCartState(null);
     }
   }
-
-  function change(e) {
-    function currentPage() {
-      for (let i = 0; i < e.target.parentNode.parentNode.children.length; i++) {
-        e.target.parentNode.parentNode.children[i].children[0].classList.remove(
-          `${style.active}`
-        );
-      }
-      e.target.classList.add(`${style.active}`);
-    }
-    checar();
-    currentPage();
-  }
-
+  
   function checar() {
+    console.log(window.innerWidth);
     if (window.innerWidth <= 600) {
       setNav(null);
     } else {
       setNav("");
     }
   }
-
+  
   let cartLength = JSON.parse(localStorage.getItem("cart"));
 
   window.onload = () => {
@@ -71,31 +75,18 @@ function Header({ cart, setCart }) {
 
       <nav className={toggle()}>
         <div className={style.nav_container}>
-          <ul>
+          <ul className="list">
             <li>
-              <Link to="/" onClick={change} className={style.active}>
-                Home
-              </Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/men" onClick={change}>
-                Men
-              </Link>
+              <Link to="/search">Search</Link>
             </li>
             <li>
-              <Link to="/women" onClick={change}>
-                Women
-              </Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/about" onClick={change}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" onClick={change}>
-                Contact
-              </Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
