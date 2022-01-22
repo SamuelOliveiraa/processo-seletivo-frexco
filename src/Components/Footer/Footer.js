@@ -1,11 +1,5 @@
 import style from "./Footer.module.css";
-import { Link } from "react-router-dom";
-import {
-  FaFacebookMessenger,
-  FaLinkedin,
-  FaInstagram,
-  FaGithub,
-} from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -15,28 +9,46 @@ function Footer() {
           <li>Formas de Pagamento</li>
           <ul>
             <li>
-              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/visa-card.png" alt="" />
+              <img
+                src="https://api-processo-seletivo-frexco.herokuapp.com/files/visa-card.png"
+                alt="visa card"
+              />
             </li>
             <li>
-              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/mastercard.png" alt="" />
+              <img
+                src="https://api-processo-seletivo-frexco.herokuapp.com/files/mastercard.png"
+                alt="mastercard"
+              />
             </li>
             <li>
-              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/elo-card.png" alt="" />
+              <img
+                src="https://api-processo-seletivo-frexco.herokuapp.com/files/elo-card.png"
+                alt="elo card"
+              />
             </li>
             <li>
               <img
                 src="https://api-processo-seletivo-frexco.herokuapp.com/files/amricanas-card.png"
-                alt=""
+                alt="americanas card"
               />
             </li>
             <li>
-              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/diners-card.png" alt="" />
+              <img
+                src="https://api-processo-seletivo-frexco.herokuapp.com/files/diners-card.png"
+                alt="diners card"
+              />
             </li>
             <li>
-              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/discover-card.png" alt="" />
+              <img
+                src="https://api-processo-seletivo-frexco.herokuapp.com/files/discover-card.png"
+                alt="discover card"
+              />
             </li>
             <li>
-              <img src="https://api-processo-seletivo-frexco.herokuapp.com/files/jcb-card.png" alt="" />
+              <img
+                src="https://api-processo-seletivo-frexco.herokuapp.com/files/jcb-card.png"
+                alt="jcb card"
+              />
             </li>
           </ul>
         </ul>

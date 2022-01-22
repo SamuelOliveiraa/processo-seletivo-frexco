@@ -12,7 +12,6 @@ function Fruit({ cart, setCart }) {
   const [fruit, setFruit] = useState([]);
   const [image, setImage] = useState("");
   const { id } = useParams();
-  console.log(fruit)
 
   const headers = {
     method: "GET",
@@ -43,7 +42,6 @@ function Fruit({ cart, setCart }) {
 
   function addCart() {
     if (currentItens === 0) {
-      console.log("sem itens");
       return false;
     } else {
       let cartString = JSON.stringify(cart);

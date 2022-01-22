@@ -1,9 +1,9 @@
-import style from './Loader.module.css'
+import style from "./Loader.module.css";
 
 function Loader() {
-  return(
+  return (
     <div className={style.loader_container}>
-        <div className={style.load}></div>
+      <div className={style.load}></div>
     </div>
   );
 }

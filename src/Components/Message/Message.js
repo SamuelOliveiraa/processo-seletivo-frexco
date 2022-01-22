@@ -24,11 +24,12 @@ function Message({ msg }) {
     <>
       {visible && (
         <div className={style.message}>
-            <h2>
-                Lembrando que esta página é apenas um prototipo não é possivel interagir ou realizar nenhuma pagamaneto atraves dela
-            </h2>
+          <h2>
+            Lembrando que esta página é apenas um prototipo não é possivel
+            interagir ou realizar nenhuma pagamaneto atraves dela
+          </h2>
 
-            <Loader/>
+          <Loader />
         </div>
       )}
     </>

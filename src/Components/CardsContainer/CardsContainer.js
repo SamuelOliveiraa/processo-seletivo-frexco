@@ -4,7 +4,7 @@ import Loader from "../Loader/Loader";
 import { useEffect, useState } from "react";
 import api from "../../Config/api";
 
-function CardsShoes({ url, limit, cart, setCart, link }) {
+function CardsContainer({ url, limit, cart, setCart, link }) {
   const [allFruits, setAllFruits] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -58,4 +58,4 @@ function CardsShoes({ url, limit, cart, setCart, link }) {
   );
 }
 
-export default CardsShoes;
+export default CardsContainer;

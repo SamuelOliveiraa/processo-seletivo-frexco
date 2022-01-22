@@ -1,8 +1,8 @@
 import style from "./QuantityButton.module.css";
 import { BiPlus, BiMinus } from "react-icons/bi";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-function Quantity_Button({ id, cart, currentItens, setCurrentItens, page}) {
+function QuantityButton({ id, cart, currentItens, setCurrentItens, page }) {
   useEffect(() => {
     cart.map((item, index) => {
       if (item.id === id) {
@@ -26,15 +26,29 @@ function Quantity_Button({ id, cart, currentItens, setCurrentItens, page}) {
 
   return (
     <div className={style.quantity}>
-      <div className={style.minus} onClick={page !== true && decrease}>
-        <BiMinus></BiMinus>
-      </div>
-      <div className={style.number}>{currentItens}</div>
-      <div className={style.plus} onClick={page !== true && increase}>
-        <BiPlus></BiPlus>
-      </div>
+      {page !== true ? (
+        <>
+          <div className={style.minus} onClick={decrease}>
+            <BiMinus></BiMinus>
+          </div>
+          <div className={style.number}>{currentItens}</div>
+          <div className={style.plus} onClick={increase}>
+            <BiPlus></BiPlus>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={style.minus}>
+            <BiMinus></BiMinus>
+          </div>
+          <div className={style.number}>{currentItens}</div>
+          <div className={style.plus}>
+            <BiPlus></BiPlus>
+          </div>
+        </>
+      )}
     </div>
   );
 }
 
-export default Quantity_Button;
+export default QuantityButton;

@@ -26,7 +26,7 @@ function Checkout({ cart, setCart }) {
       if (item.id === Number(e.target.dataset["id"])) {
         let otherTotal = currentTotal - Number(item.price) * Number(item.itens);
         setCurrentTotal(otherTotal);
-        
+
         cart.splice(index, 1);
         let cartString = JSON.stringify(cart);
         if (localStorage.getItem("cart") == null) {

@@ -1,10 +1,10 @@
 import style from "./ModalCart.module.css";
 import { BiTrash } from "react-icons/bi";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 
-function Modal_Cart({ cartState, cart, setCart }) {
+function ModalCart({ cartState, cart, setCart }) {
   function toggleCart() {
     if (cartState === "") {
       return `${style.modal_cart} + ${style.inactive}`;
@@ -87,4 +87,4 @@ function Modal_Cart({ cartState, cart, setCart }) {
   );
 }
 
-export default Modal_Cart;
+export default ModalCart;

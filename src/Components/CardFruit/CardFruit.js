@@ -1,9 +1,6 @@
 import style from "./CardFruit.module.css";
-import { Link } from "react-router-dom";
-
 import Button from "../Button/Button";
 import { BiCartAlt } from "react-icons/bi";
-import { useState } from "react";
 
 function CardFruit({ data, cart, setCart, link }) {
   function addCart() {
