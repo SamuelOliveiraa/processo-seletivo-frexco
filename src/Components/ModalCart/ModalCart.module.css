@@ -22,7 +22,7 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 .modal_cart .cart_container{
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 158px;
 }
 .modal_cart .cart_container,
@@ -79,19 +79,25 @@
   font-size: 2rem;
   color: var(--dark-grayish-blue);
   position: relative;
-  z-index: 5;
+  z-index: -5;
 }
-.modal_cart .cart_container .full .full_container svg:hover {
+.modal_cart .cart_container .full .full_container .icon_container:hover svg {
   color: red;
 }
 .modal_cart .cart_container .full .full_container .icon_container {
+  position: relative;
+  z-index: 50;
   width: 30px;
   height: 30px;
   margin-left: 10px;
   text-align: center;
+  cursor: pointer;
 }
 .modal_cart .cart_container .full .full_container + .full_container {
   margin-bottom: 1.8rem;
+}
+.modal_cart .cart_container .full .full_container:last-of-type{
+  margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 600px) {

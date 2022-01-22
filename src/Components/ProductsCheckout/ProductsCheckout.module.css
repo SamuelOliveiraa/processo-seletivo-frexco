@@ -59,6 +59,13 @@ select::-ms-expand {
 }
 .table .tr .td .delete{
     font-size: 24px;
+    position: relative;
+    z-index: 20;
+    cursor: pointer;
+}
+.table .tr .td .delete > svg{
+    position: relative;
+    z-index: -1;
 }
 .table .total_container{
     height: 95px;

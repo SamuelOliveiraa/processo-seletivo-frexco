@@ -27,6 +27,8 @@
     color: var(--color-orange);
     padding: 0 1rem;
     font-size: 2rem;
+    position: relative;
+    z-index: 20;
 }
 .quantity .minus {
     border-radius: 1rem 0 0 1rem;

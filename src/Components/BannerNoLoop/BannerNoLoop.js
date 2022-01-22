@@ -20,8 +20,8 @@ function BannerNoLoop({ data }) {
     <div className={style.swiper}>
       <div className={style.wrapper}>
       {data !== undefined &&
-        data.images.map((item) => (
-          <div className={style.img_container}>
+        data.images.map((item, index) => (
+          <div className={style.img_container} key={index}>
             <img src={item} alt="" />
           </div>
         ))}

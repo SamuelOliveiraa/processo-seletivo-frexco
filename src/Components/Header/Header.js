@@ -43,16 +43,15 @@ function Header({ cart, setCart }) {
       setCartState(null);
     }
   }
-  
+
   function checar() {
-    console.log(window.innerWidth);
     if (window.innerWidth <= 600) {
       setNav(null);
     } else {
       setNav("");
     }
   }
-  
+
   let cartLength = JSON.parse(localStorage.getItem("cart"));
 
   window.onload = () => {

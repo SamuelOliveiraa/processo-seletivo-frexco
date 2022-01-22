@@ -3,12 +3,20 @@ import { Link } from "react-router-dom";
 
 import Button from "../Button/Button";
 import { BiCartAlt } from "react-icons/bi";
+import { useState } from "react";
 
-function CardShoes({ data }) {
+function CardFruit({ data, cart, setCart }) {
   function addCart() {
-    let cartString = JSON.stringify([]);
+    let cartString = JSON.stringify(cart);
 
     if (localStorage.getItem("cart") === null) {
+      localStorage.setItem("cart", cartString);
+    } else {
+      cartString = JSON.parse(localStorage.getItem("cart"));
+      setCart(cartString);
+    }
+
+    if (cart.length === 0) {
       let newCart = {
         id: data.id,
         name: data.name,
@@ -17,14 +25,17 @@ function CardShoes({ data }) {
         itens: 1,
       };
 
-      cartString.push(newCart);
-      cartString = JSON.stringify(cartString);
-      localStorage.setItem("cart", cartString);
-    } else {
-      cartString = JSON.parse(localStorage.getItem("cart"));
+      cart.push(newCart);
+      cartString = JSON.stringify(cart);
 
+      if (localStorage.getItem("cart") === null) {
+        localStorage.setItem("cart", cartString);
+      } else {
+        localStorage.setItem("cart", cartString);
+      }
+    } else {
       let reference = "";
-      cartString.map((item) => {
+      cart.map((item) => {
         if (item.id === data.id) {
           //mensagem de erro
           console.log("item ja existe no carrinho");
@@ -40,9 +51,14 @@ function CardShoes({ data }) {
           itens: 1,
         };
 
-        cartString.push(newCart);
-        cartString = JSON.stringify(cartString);
-        localStorage.setItem("cart", cartString);
+        cart.push(newCart);
+        cartString = JSON.stringify(cart);
+
+        if (localStorage.getItem("cart") === null) {
+          localStorage.setItem("cart", cartString);
+        } else {
+          localStorage.setItem("cart", cartString);
+        }
       }
     }
   }
@@ -99,4 +115,4 @@ function CardShoes({ data }) {
   );
 }
 
-export default CardShoes;
+export default CardFruit;

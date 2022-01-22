@@ -8,7 +8,11 @@ import BannerHome from "../../Components/BannerHome/BannerHome";
 function Home({ cart, setCart }) {
   return (
     <div>
-      <BannerHome img={"https://api-processo-seletivo-frexco.herokuapp.com/files/banner.png"} />
+      <BannerHome
+        img={
+          "https://api-processo-seletivo-frexco.herokuapp.com/files/banner.png"
+        }
+      />
 
       <InfoCards />
 
@@ -18,13 +22,7 @@ function Home({ cart, setCart }) {
         <p>Confira aqui as melhoras ofertas</p>
       </Link>
 
-      <CardsContainer
-        url={"/all"}
-        cart={cart}
-        setCart={setCart}
-        limit={9}
-      />
-
+      <CardsContainer url={"/all"} limit={9} cart={cart} setCart={setCart} />
     </div>
   );
 }

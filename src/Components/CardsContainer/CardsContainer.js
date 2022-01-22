@@ -4,7 +4,7 @@ import Loader from "../Loader/Loader";
 import { useEffect, useState } from "react";
 import api from "../../Config/api";
 
-function CardsShoes({ url, cart, setCart, limit }) {
+function CardsShoes({ url, limit, cart, setCart }) {
   const [allFruits, setAllFruits] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -19,7 +19,6 @@ function CardsShoes({ url, cart, setCart, limit }) {
     api
       .get(`${url}`, headers)
       .then((resp) => {
-        console.log(resp.data.data);
         setAllFruits(resp.data.data);
         setLoading(true);
         setLoading(false);

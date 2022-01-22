@@ -2,7 +2,7 @@ import style from './IconHeader.module.css'
 
 function Icon_Header({nav, setNav}) {
     function click() {
-        if(nav == null){
+        if(nav === null){
             setNav('')
             toggle()
         }else{

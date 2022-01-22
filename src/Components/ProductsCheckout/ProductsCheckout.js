@@ -1,14 +1,9 @@
 import style from "./ProductsCheckout.module.css";
-import { useEffect, useState } from "react";
 import { BiX, BiChevronLeft } from "react-icons/bi";
 import QuantityButton from "../QuantityButton/QuantityButton";
 import Button from "../Button/Button";
 
-function Products_Checkout({ cart, total }) {
-  const [itens, setItens] = useState("");
-  useEffect(() => {
-    setItens();
-  });
+function ProductsCheckout({ cart, total, itens, setItens, deleteItem, setCurrentTotal }) {
 
   return (
     <div className={style.products}>
@@ -23,42 +18,48 @@ function Products_Checkout({ cart, total }) {
           </div>
         </div>
 
-        <div className={style.td_container}>
-          {cart.length !== 0 &&
-            cart.map((item) => (
-              <div className={style.tr}>
-                <div className={style.td}>
-                  <div className={style.text_content}>
-                    <div className={style.img_container}>
-                      <img src={item.src} alt="" />
+        {
+          <div className={style.td_container}>
+            {cart.length !== 0 &&
+              cart.map((item, index) => (
+                <div className={style.tr} key={index}>
+                  <div className={style.td}>
+                    <div className={style.text_content}>
+                      <div className={style.img_container}>
+                        <img src={item.images[0]} alt="" />
+                      </div>
+
+                      <div className={style.text}>
+                        <h2>{item.name}</h2>
+
+                        <span>
+                          {Number(item.price).toLocaleString("pt-br", {
+                            style: "currency",
+                            currency: "BRL",
+                          })}
+                        </span>
+                        <span></span>
+                      </div>
                     </div>
 
-                    <div className={style.text}>
-                      <h2>{item.title}</h2>
-
-                      <span>{item.colors.name}</span>
-
-                      <span>
-                        {Number(item.price).toLocaleString("pt-br", {
-                          style: "currency",
-                          currency: "BRL",
-                        })}
-                      </span>
-                      <span></span>
+                    <div className={style.quantity_container}>
+                      <QuantityButton
+                        itens={item.itens}
+                        setItens={setItens}
+                        id={item.id}
+                        cart={cart}
+                        setCurrentTotal={setCurrentTotal}
+                      />
                     </div>
-                  </div>
 
-                  <div className={style.quantity_container}>
-                    <QuantityButton itens={item.itens} setItens={setItens} />
-                  </div>
-
-                  <div className={style.delete}>
-                    <BiX />
+                    <div className={style.delete} onClick={deleteItem} data-id={item.id}>
+                      <BiX />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-        </div>
+              ))}
+          </div>
+        }
 
         <div className={style.total_container}>
           <Button text="Voltar" icon={<BiChevronLeft />} to="/" />
@@ -97,4 +98,4 @@ function Products_Checkout({ cart, total }) {
   );
 }
 
-export default Products_Checkout;
+export default ProductsCheckout;
