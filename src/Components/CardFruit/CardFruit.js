@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import { BiCartAlt } from "react-icons/bi";
 import { useState } from "react";
 
-function CardFruit({ data, cart, setCart }) {
+function CardFruit({ data, cart, setCart, link }) {
   function addCart() {
     let cartString = JSON.stringify(cart);
 
@@ -62,6 +62,7 @@ function CardFruit({ data, cart, setCart }) {
       }
     }
   }
+
   return (
     <div className={style.card}>
       <div className={style.img_container}>
@@ -92,6 +93,7 @@ function CardFruit({ data, cart, setCart }) {
               to="/"
               text="Adicionar"
               icon={<BiCartAlt></BiCartAlt>}
+              link={link}
             ></Button>
           </div>
         </div>

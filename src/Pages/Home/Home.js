@@ -22,7 +22,13 @@ function Home({ cart, setCart }) {
         <p>Confira aqui as melhoras ofertas</p>
       </Link>
 
-      <CardsContainer url={"/all"} limit={9} cart={cart} setCart={setCart} />
+      <CardsContainer
+        url={"/all"}
+        limit={9}
+        cart={cart}
+        setCart={setCart}
+        link={true}
+      />
     </div>
   );
 }

@@ -1,46 +1,36 @@
 import style from "./QuantityButton.module.css";
 import { BiPlus, BiMinus } from "react-icons/bi";
-import {useEffect} from 'react'
+import { useEffect, useState } from "react";
 
-function Quantity_Button({ itens, setItens, id, setCurrentTotal, cart }) {
-  let total = 0;
-
+function Quantity_Button({ id, cart, currentItens, setCurrentItens, page}) {
   useEffect(() => {
     cart.map((item, index) => {
-      if (item.id === itens.id) {
-        item.itens = itens.itemValue;
-        let cartString = JSON.stringify(cart);
-        if (localStorage.getItem("cart") == null) {
-          localStorage.setItem("cart", cartString);
-        } else {
-          localStorage.setItem("cart", cartString);
-        }
+      if (item.id === id) {
+        setCurrentItens(item.itens);
       }
-      total = total + Number(item.price) * Number(item.itens);
     });
-    setCurrentTotal(total);
   }, []);
 
   function decrease() {
-    if (itens !== 0) {
-      let itemValue = itens;
+    if (currentItens !== 0) {
+      let itemValue = currentItens;
       itemValue = itemValue - 1;
-      setItens({id, itemValue});
+      setCurrentItens(itemValue);
     }
   }
   function increase() {
-    let itemValue = itens;
+    let itemValue = currentItens;
     itemValue = itemValue + 1;
-    setItens({id, itemValue});
-    console.log(itemValue)
+    setCurrentItens(itemValue);
   }
+
   return (
     <div className={style.quantity}>
-      <div className={style.minus} onClick={decrease}>
+      <div className={style.minus} onClick={page !== true && decrease}>
         <BiMinus></BiMinus>
       </div>
-      <div className={style.number}>{itens}</div>
-      <div className={style.plus} onClick={increase}>
+      <div className={style.number}>{currentItens}</div>
+      <div className={style.plus} onClick={page !== true && increase}>
         <BiPlus></BiPlus>
       </div>
     </div>

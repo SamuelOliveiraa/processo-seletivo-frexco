@@ -2,8 +2,11 @@ import style from "./ProductsCheckout.module.css";
 import { BiX, BiChevronLeft } from "react-icons/bi";
 import QuantityButton from "../QuantityButton/QuantityButton";
 import Button from "../Button/Button";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-function ProductsCheckout({ cart, total, itens, setItens, deleteItem, setCurrentTotal }) {
+function ProductsCheckout({ cart, currentTotal, deleteItem, setCurrentTotal }) {
+  const [currentItens, setCurrentItens] = useState("");
 
   return (
     <div className={style.products}>
@@ -24,7 +27,10 @@ function ProductsCheckout({ cart, total, itens, setItens, deleteItem, setCurrent
               cart.map((item, index) => (
                 <div className={style.tr} key={index}>
                   <div className={style.td}>
-                    <div className={style.text_content}>
+                    <Link
+                      to={`/fruit/${item.id}`}
+                      className={style.text_content}
+                    >
                       <div className={style.img_container}>
                         <img src={item.images[0]} alt="" />
                       </div>
@@ -40,19 +46,23 @@ function ProductsCheckout({ cart, total, itens, setItens, deleteItem, setCurrent
                         </span>
                         <span></span>
                       </div>
-                    </div>
+                    </Link>
 
                     <div className={style.quantity_container}>
                       <QuantityButton
-                        itens={item.itens}
-                        setItens={setItens}
-                        id={item.id}
                         cart={cart}
-                        setCurrentTotal={setCurrentTotal}
+                        id={item.id}
+                        currentItens={item.itens}
+                        setCurrentItens={setCurrentItens}
+                        page={true}
                       />
                     </div>
 
-                    <div className={style.delete} onClick={deleteItem} data-id={item.id}>
+                    <div
+                      className={style.delete}
+                      onClick={deleteItem}
+                      data-id={item.id}
+                    >
                       <BiX />
                     </div>
                   </div>
@@ -68,7 +78,7 @@ function ProductsCheckout({ cart, total, itens, setItens, deleteItem, setCurrent
               <h2>Subtotal:</h2>
 
               <span>
-                {Number(total).toLocaleString("pt-br", {
+                {Number(currentTotal).toLocaleString("pt-br", {
                   style: "currency",
                   currency: "BRL",
                 })}
@@ -85,7 +95,7 @@ function ProductsCheckout({ cart, total, itens, setItens, deleteItem, setCurrent
               <h2>Total:</h2>
 
               <span>
-                {Number(total).toLocaleString("pt-br", {
+                {Number(currentTotal).toLocaleString("pt-br", {
                   style: "currency",
                   currency: "BRL",
                 })}

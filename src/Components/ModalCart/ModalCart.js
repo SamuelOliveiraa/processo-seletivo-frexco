@@ -2,6 +2,7 @@ import style from "./ModalCart.module.css";
 import { BiTrash } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 function Modal_Cart({ cartState, cart, setCart }) {
   function toggleCart() {
@@ -40,7 +41,7 @@ function Modal_Cart({ cartState, cart, setCart }) {
 
   return (
     <div className={toggleCart()}>
-      <h2>Cart</h2>
+      <h2>Carinho</h2>
       <div className={style.cart_container}>
         {cart.length === 0 || cart === null ? (
           <div className={`${style.empty} flex_center`}>
@@ -50,16 +51,18 @@ function Modal_Cart({ cartState, cart, setCart }) {
           cart.map((item, index) => (
             <div className={style.full} key={index}>
               <div className={style.full_container}>
-                <img src={item.images[0]} alt="" />
+                <Link to={`/fruit/${item.id}`}>
+                  <img src={item.images[0]} alt="" />
+                </Link>
 
-                <p>
+                <Link to={`/fruit/${item.id}`}>
                   <span className="title">{item.name}</span>
 
                   <span className="price">
                     R${item.price} x {item.itens}
                     <strong>R${(item.price * item.itens).toFixed(2)}</strong>
                   </span>
-                </p>
+                </Link>
 
                 <div
                   className={style.icon_container}

@@ -8,10 +8,11 @@ import QuantityButton from "../../Components/QuantityButton/QuantityButton";
 import BannerNoLoop from "../../Components/BannerNoLoop/BannerNoLoop";
 
 function Fruit({ cart, setCart }) {
+  const [currentItens, setCurrentItens] = useState(0);
   const [fruit, setFruit] = useState([]);
-  const [image, setImage] = useState('');
-  const [itens, setItens] = useState(0);
+  const [image, setImage] = useState("");
   const { id } = useParams();
+  console.log(fruit)
 
   const headers = {
     method: "GET",
@@ -41,7 +42,7 @@ function Fruit({ cart, setCart }) {
   }
 
   function addCart() {
-    if (itens === 0) {
+    if (currentItens === 0) {
       console.log("sem itens");
       return false;
     } else {
@@ -60,7 +61,7 @@ function Fruit({ cart, setCart }) {
           name: fruit.name,
           images: fruit.images,
           price: fruit.price,
-          itens: 1,
+          itens: currentItens,
         };
 
         cart.push(newCart);
@@ -75,7 +76,7 @@ function Fruit({ cart, setCart }) {
         let reference = "";
         cart.map((item) => {
           if (item.id === fruit.id) {
-            item.itens = itens;
+            item.itens = currentItens;
             cartString = JSON.stringify(cart);
 
             if (localStorage.getItem("cart") === null) {
@@ -92,7 +93,7 @@ function Fruit({ cart, setCart }) {
             name: fruit.name,
             images: fruit.images,
             price: fruit.price,
-            itens: 1,
+            itens: currentItens,
           };
 
           cart.push(newCart);
@@ -175,7 +176,12 @@ function Fruit({ cart, setCart }) {
             </p>
 
             <div className={style.buttons}>
-              <QuantityButton itens={itens} setItens={setItens} />
+              <QuantityButton
+                cart={cart}
+                id={fruit.id}
+                currentItens={currentItens}
+                setCurrentItens={setCurrentItens}
+              />
 
               <div className={`${style.btn} + flex_center`} onClick={addCart}>
                 <div className={style.icon}>

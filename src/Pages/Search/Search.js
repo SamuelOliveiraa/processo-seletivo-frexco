@@ -23,6 +23,7 @@ function Search({ cart, setCart }) {
         url={search === "" ? "/all" : `/search?name=${search}`}
         cart={cart}
         setCart={setCart}
+        link={true}
       />
     </div>
   );

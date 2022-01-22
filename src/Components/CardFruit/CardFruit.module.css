@@ -74,7 +74,8 @@
 .card .text .text_container + a {
   height: 35px;
 }
-.card .text .text_container .button_container > a {
+.card .text .text_container .button_container > a,
+.card .text .text_container .button_container > div {
   width: 108px;
   height: 30px;
   font-size: 0.4rem;

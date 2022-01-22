@@ -2,11 +2,19 @@ import style from "./Checkout.module.css";
 import PaymentCheckout from "../../Components/PaymentCheckout/PaymentCheckout";
 import ProductsCheckout from "../../Components/ProductsCheckout/ProductsCheckout";
 import { useEffect, useState } from "react";
+import Message from "../../Components/Message/Message";
 
 function Checkout({ cart, setCart }) {
-  const [itens, setItens] = useState("");
   const [currentTotal, setCurrentTotal] = useState(0);
-  
+  const [msg, setMsg] = useState(true);
+
+  useEffect(() => {
+    let total = 0;
+    cart.map((item) => {
+      total = total + Number(item.price) * Number(item.itens);
+    });
+    setCurrentTotal(total);
+  }, []);
 
   let a = JSON.parse(localStorage.getItem("cart"));
   useEffect(() => {
@@ -16,6 +24,9 @@ function Checkout({ cart, setCart }) {
   function deleteItem(e) {
     cart.map((item, index) => {
       if (item.id === Number(e.target.dataset["id"])) {
+        let otherTotal = currentTotal - Number(item.price) * Number(item.itens);
+        setCurrentTotal(otherTotal);
+        
         cart.splice(index, 1);
         let cartString = JSON.stringify(cart);
         if (localStorage.getItem("cart") == null) {
@@ -24,35 +35,29 @@ function Checkout({ cart, setCart }) {
           localStorage.setItem("cart", cartString);
         }
         setCart(a);
-        let otherTotal = currentTotal - Number(item.price) * Number(item.itens);
-        setCurrentTotal(otherTotal);
       }
     });
   }
 
   return (
     <>
-      {/* {cart.length === 0 || cart === undefined || cart[0].itens === 0 ? (
+      {cart.length === 0 || cart === undefined || cart[0].itens === 0 ? (
         window.location.replace("/")
       ) : (
-        <div className={style.checkout_container}>
-          <ProductsCheckout cart={cart} total={total} />
+        <>
+          {msg && <Message msg={msg} />}
+          <div className={style.checkout_container}>
+            <ProductsCheckout
+              cart={cart}
+              currentTotal={currentTotal}
+              deleteItem={deleteItem}
+              setCurrentTotal={setCurrentTotal}
+            />
 
-          <PaymentCheckout />
-        </div>
-      )} */}
-      <div className={style.checkout_container}>
-        <ProductsCheckout
-          cart={cart}
-          total={currentTotal}
-          itens={itens}
-          setItens={setItens}
-          deleteItem={deleteItem}
-          setCurrentTotal={setCurrentTotal}
-        />
-
-        <PaymentCheckout />
-      </div>
+            <PaymentCheckout />
+          </div>
+        </>
+      )}
     </>
   );
 }
