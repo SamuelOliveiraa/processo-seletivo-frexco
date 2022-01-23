@@ -68,7 +68,7 @@ function Header({ cart, setCart }) {
         <IconHeader nav={nav} setNav={setNav}></IconHeader>
 
         <h2>
-          <Link to="/">HortFrut</Link>
+          <Link to="/">HortiFruti</Link>
         </h2>
       </div>
 

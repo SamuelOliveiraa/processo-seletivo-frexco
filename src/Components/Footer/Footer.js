@@ -54,7 +54,7 @@ function Footer() {
         </ul>
       </div>
       <div className={`${style.header} flex_between`}>
-        <h1>HortFrut</h1>
+        <h1>HortiFruti</h1>
 
         <div className={style.icons}>
           <a
